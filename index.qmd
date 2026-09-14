@@ -1,0 +1,39 @@
+---
+title: "BMC SPT Data"
+---
+<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+<script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+<script src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+
+```{ojs}
+//| echo: false
+import {generateTabulatorTableFromCSV} from "8bb63a6cde9addff"
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+generateTabulatorTableFromCSV(
+  "#my-table",                          // CSS selector for the table container
+  "https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv",      // <-- plug in your CSV URL or file path here
+
+  {
+    displayedColumns: [                 // columns to show (in order)
+      "Year",
+      "Season",
+      "Show",
+      "Genre",
+      "Times_Performed"
+    ],
+
+    numericColumns: ["Year", "Times_Performed"],       // columns to treat as numbers (enables range filters)
+
+    categoryColumns: ["Season", "Genre"],      // columns to treat as categories (enables dropdown filters)
+
+    sortColumns: ["Year"],          // default sort column(s)
+    sortOrders: ["asc"]                 // "asc" or "desc" for each sort column
+  }
+);
+```
+::: {#my-table style="width: 1000px"}
+:::

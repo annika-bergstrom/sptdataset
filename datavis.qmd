@@ -1,0 +1,170 @@
+---
+title: "Data Visualization"
+code-fold: true
+---
+
+## Year of show vs Times Performed
+
+```{r}
+#| label: fig-yearvsperformed
+#| fig-cap: "Year of show vs times performed."
+#| warning: false
+
+library(ggplot2)
+library (dplyr)
+
+proddata <- read.csv("https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv")
+
+names(proddata)[names(proddata) == "Times Performed"] <- "Times_Performed"
+
+year_average <- proddata %>%
+  group_by(Year) %>%
+  summarise(Average_Times_Performed = median(Times_Performed, na.rm = TRUE))
+
+# Barplot
+ggplot(year_average, aes(x=Year, y=Average_Times_Performed)) + 
+  geom_point(stat = "identity") + geom_smooth(method = "lm", formula = y ~ poly(x, 1), color = "red", se = TRUE)
+```
+
+## Genre vs Times Performed
+```{r}
+#| label: fig-genrevsperformed
+#| fig-cap: "Genre vs Times Performed."
+#| warning: false
+
+library(ggplot2)
+library (dplyr)
+library (ggiraph)
+
+proddata <- read.csv("https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv")
+
+names(proddata)[names(proddata) == "Times Performed"] <- "Times_Performed"
+
+genre_average <- proddata %>%
+  group_by(Genre) %>%
+  summarise(Average_Times_Performed = mean(Times_Performed, na.rm = TRUE))
+
+# Barplot
+ggplot(genre_average, aes(x=Genre, y=Average_Times_Performed)) + 
+  geom_bar_interactive(hover_nearest = TRUE, aes(tooltip = paste("Genre:", Genre, "\nAverage Times Performed:", round(Average_Times_Performed, 2))), stat = "identity") 
+
+```
+
+## Genre vs Show Season
+```{r}
+#| label: fig-genrevsseason
+#| fig-cap: "Genre vs Show Season."
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+
+
+proddata <- read.csv("https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv")
+
+# variable assignment 
+names(proddata)[names(proddata) == "Times Performed"] <- "Times_Performed"
+
+names(proddata)[names(proddata) == "Fall "] <- "Fall"
+
+season_counts <- proddata %>%
+  count(Season)
+season_genre_counts <- proddata %>%
+  count(Season, Genre)
+
+# Barplot
+ggplot(season_genre_counts, aes(fill=Genre, x=Season, y= n)) + 
+  geom_bar(position = "stack", stat = "identity")
+```
+
+## Author vs Genre
+```{r}
+#| label: fig-authorvsgenre
+#| fig-cap: "Author vs Genre."
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+
+proddata <- read.csv("https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv")
+
+author_counts <- proddata %>%
+  count(Author)
+genre_author_counts <- proddata %>%
+  count(Author, Genre)
+
+proddata_grouped <- proddata %>%
+  add_count(Author, name = "author_total") %>%
+  mutate(
+    author_grouped = if_else(author_total == 1, "Other", Author)
+  )
+# Count by grouped author and genre
+plot_data <- proddata_grouped %>%
+  count(author_grouped, Genre)
+
+# Barplot
+ggplot(plot_data, aes(fill=Genre, x=author_grouped, y= n)) + 
+  geom_bar(position = "stack", stat = "identity")
+```
+
+## Shakepeare Shows Over Time
+```{r}
+#| label: fig-shakespeareovertime
+#| fig-cap: "Shakespeare vs Year."
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+
+proddata <- read.csv("https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv")
+
+Shakespeare <- proddata %>%
+  filter(Author == "William Shakespeare")
+
+# count shakespeare productions by year
+plot_data <- Shakespeare %>%
+  count(Year)
+
+# Bar chart
+ggplot(plot_data, aes(x= Year, y= n)) + 
+  geom_bar(stat = "identity")
+```
+## Cast Size Change Over Time
+```{r}
+#| label: fig-castsizeovertime
+#| fig-cap: "Cast Size Change Over Time"
+#| warning: false
+# Library
+library(ggplot2)
+
+# Create dummy data
+proddata <- read.csv("https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv")
+
+# linear trend + confidence interval
+ggplot(proddata, aes(x= Year, y= Cast_Size)) +
+  geom_point() + geom_smooth(method=lm , color="red", fill="#69b3a2", se=TRUE)
+```
+
+
+## Genre vs Year
+```{r}
+#| label: fig-genrevsyear
+#| fig-cap: "Genre vs Year"
+#| warning: false
+
+library(ggplot2)
+library (dplyr)
+library (ggiraph)
+library (geomtextpath)
+
+proddata <- read.csv("https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv")
+
+genre_counts <- proddata %>%
+  count(Genre)
+Year_genre_counts <- proddata %>%
+  count(Year, Genre)
+# Barplot
+ggplot(Year_genre_counts, aes(x=Year, y= n, color=Genre, group=Genre)) + 
+  geom_point(stat = "identity") + geom_labelsmooth(aes (label = Genre), fill = "white", method = "lm", formula = y ~ x)
+
+```

@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Quarto Sandbox"
+  navbar:
+    background: "#426d58"
+    title: false
+    search: true 
+    left:
+      - href: index.qmd
+        text: Home
+      - href: datavis.qmd
+        text: Data Visualization
+      - about.qmd
+  
+
+format:
+  html:
+    include-before-body: header.html
+    theme:
+      - lux
+      - brand
+    css: styles.css
+    toc: false
+
+
+
