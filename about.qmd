@@ -6,4 +6,4 @@ This site contains a dataset based on the currently known production history of 
 
 The data contained in this site was sourced from SPT's public Wordpress, and has been compiled here, along with other data that has been collected from other sources, including SPT's Youtube channel and previous blog. 
 
-<button type="button" class="btn btn-primary">More Information</button>
+<button type="button" class="btn btn-primary"><a href=https://bmcspt.wordpress.com>More Information</a></button>
