@@ -4,7 +4,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Shakespeare Performance Troupe Data Archive\n\n\n\n\n\nThis site contains a dataset based on the currently known production history of Bryn Mawr College’s Shakespeare Performance Troupe. It was built using Quarto, R, and the Post45 Data Viewer.\nThe data contained in this site was sourced from SPT’s public Wordpress, and has been compiled here, along with other data that has been collected from other sources, including SPT’s Youtube channel and previous blog."
+    "text": "Shakespeare Performance Troupe Data Archive\n\n\n\n\n\nThis site contains a dataset based on the currently known production history of Bryn Mawr College’s Shakespeare Performance Troupe. It was built using Quarto, R, and the Post45 Data Viewer.\nThe data contained in this site was sourced from SPT’s public Wordpress, and has been compiled here, along with other data that has been collected from other sources, including SPT’s Youtube channel and previous blog.\n\nMore Information"
   },
   {
     "objectID": "datavis.html#year-of-show-vs-times-performed",

@@ -39,7 +39,6 @@ main.content,
     text-align:center;
 }
 #my-table{
-    align:center;
     border:#b21f24 2px solid;
     margin-left:auto !important;
     margin-right:auto !important;
@@ -48,4 +47,11 @@ main.content,
   width: 100%;
   margin-left:0;
   margin-right: 0;
+}
+
+.btn.btn-primary{
+    justify-content:center !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    display:flex;
 }
