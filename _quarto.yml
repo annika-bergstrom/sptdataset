@@ -15,8 +15,10 @@ website:
         text: Home
       - href: datavis.qmd
         text: Data Visualization
-      - about.qmd
-  
+      - href: about.qmd
+        text: About
+      - href: data.qmd
+        text: Data
 
 format:
   html:
