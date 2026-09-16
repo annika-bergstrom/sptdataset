@@ -103,7 +103,6 @@ main.content,
 
 .button-container {
     display: flex;
-    justify-content: center;
     gap: 2rem; /* Space between buttons */
     margin-top: 2rem; /* Space above the button container */
 }

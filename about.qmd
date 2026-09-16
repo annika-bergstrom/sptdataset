@@ -6,9 +6,9 @@ title: "About"
   <p>The data contained in this site was sourced from SPT's public Wordpress, and has been compiled here, along with other data that has been collected from other sources, including SPT's Youtube channel and previous blog.</p> </div>
   <br><br><br>
  <div class="button-container">
-  <a type="button" class="btn btn-primary" href="https://bmcspt.wordpress.com">More About SPT</a>
-  <a type="button" class="btn btn-primary" href="https://www.youtube.com/@BMCSPT">SPT's Youtube</a>
-  <a type="button" class="btn btn-primary" href="data.qmd">Data Collection</a>
+  <a type="button" class="btn btn-dark" href="https://bmcspt.wordpress.com">More About SPT</a>
+  <a type="button" class="btn btn-dark" href="https://www.youtube.com/@BMCSPT">SPT's Youtube</a>
+  <a type="button" class="btn btn-dark" href="data.qmd">Data Collection</a>
 </div>
 
 
