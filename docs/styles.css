@@ -2,12 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Caacupe+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Condensed+One&display=swap');
 
+:root {
+  /* Brand / Theme Colors */
+  --color-primary: #192863;
+  --color-secondary: #6288A6;
+  --color-accent: #6A2526;
+
+  /* Neutral Colors */
+  --color-bg: #E7E6DA;
+  --color-bg-muted: #D1C9C7;
+  --color-text: #543B41;
+}
+
 /* css styles */
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #eee1c7;
+  background-color: #E7E6DA;
 }
 
 main.content,
@@ -27,19 +39,21 @@ main.content,
     outline-width: 0px;
     margin-left: calc(50% - 50vw);
     
-    background-color: #deb425;
-    border-bottom:#b21f24 3px solid;
+    background-color: #6288A6;
+    border-bottom:#6A2526 3px solid;
 
     text-align:left;
     padding-left:5rem;
-    font-family: 'Caacupe One', sans-serif;   
+    font-family: 'Caacupe One', sans-serif; 
+    text-color: #543B41;  
 }
 .title {
     font-family: 'Special Gothic Condensed One', sans-serif;
     text-align:center;
+    color: #543B41;
 }
 #my-table{
-    border:#b21f24 2px solid;
+    border:#6A2526 2px solid;
     margin-left:auto !important;
     margin-right:auto !important;
 }
@@ -54,4 +68,14 @@ main.content,
     margin-left:auto !important;
     margin-right:auto !important;
     display:flex;
+    max-width: 20rem;
+}
+
+.about-section {
+    width: 800px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }

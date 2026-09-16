@@ -35,5 +35,5 @@ generateTabulatorTableFromCSV(
   }
 );
 ```
-::: {#my-table style="width: 1000px"}
+:::{#my-table style="width: 1000px"}
 :::

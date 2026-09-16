@@ -5,7 +5,8 @@ project:
 website:
   title: "Quarto Sandbox"
   navbar:
-    background: "#426d58"
+    background: "#6A2526"
+    text: "#E7E6DA"
     title: false
     search: true 
     left:
@@ -18,6 +19,8 @@ website:
 
 format:
   html:
+    grid:
+      body-width: 1200px
     include-before-body: header.html
     theme:
       - lux
