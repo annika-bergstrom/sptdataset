@@ -1,9 +1,10 @@
 project:
+  title: "SPT Data Archive"
   type: website
   output-dir: docs
 
 website:
-  title: "Quarto Sandbox"
+  title: "SPT Data Archive"
   navbar:
     background: "#6A2526"
     text: "#E7E6DA"
