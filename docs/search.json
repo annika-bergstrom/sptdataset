@@ -1,10 +1,17 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Shakespeare Performance Troupe Data Archive",
     "section": "",
-    "text": "Shakespeare Performance Troupe Data Archive\n\n\n\n\n\n\n\nThis site contains a dataset based on the currently known production history of Bryn Mawr College’s Shakespeare Performance Troupe. It was built using Quarto, R, and the Post45 Data Viewer.\n\n\nThe data contained in this site was sourced from SPT’s public Wordpress, and has been compiled here, along with other data that has been collected from other sources, including SPT’s Youtube channel and previous blog.\n\n\n More Information"
+    "text": "Shakespeare Performance Troupe Data Archive"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BMC SPT Data",
+    "section": "",
+    "text": "Shakespeare Performance Troupe Data Archive\n\n\n\n\n\n\n\n\n\nimport {generateTabulatorTableFromCSV} from \"8bb63a6cde9addff\"\n\n\n\n\n\n\n\ngenerateTabulatorTableFromCSV(\n  \"#my-table\",                          // CSS selector for the table container\n  \"https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv\",      // &lt;-- plug in your CSV URL or file path here\n\n  {\n    displayedColumns: [                 // columns to show (in order)\n      \"Year\",\n      \"Season\",\n      \"Show\",\n      \"Genre\",\n      \"Times_Performed\"\n    ],\n\n    numericColumns: [\"Year\", \"Times_Performed\"],       // columns to treat as numbers (enables range filters)\n\n    categoryColumns: [\"Season\", \"Genre\"],      // columns to treat as categories (enables dropdown filters)\n\n    sortColumns: [\"Year\"],          // default sort column(s)\n    sortOrders: [\"asc\"]                 // \"asc\" or \"desc\" for each sort column\n  }\n);"
   },
   {
     "objectID": "datavis.html#year-of-show-vs-times-performed",
@@ -56,10 +63,10 @@
     "text": "Genre vs Year\n\n\nCode\nlibrary(ggplot2)\nlibrary (dplyr)\nlibrary (ggiraph)\nlibrary (geomtextpath)\n\nproddata &lt;- read.csv(\"https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv\")\n\ngenre_counts &lt;- proddata %&gt;%\n  count(Genre)\nYear_genre_counts &lt;- proddata %&gt;%\n  count(Year, Genre)\n# Barplot\nggplot(Year_genre_counts, aes(x=Year, y= n, color=Genre, group=Genre)) + \n  geom_point(stat = \"identity\") + geom_labelsmooth(aes (label = Genre), fill = \"white\", method = \"lm\", formula = y ~ x)\n\n\n\n\n\n\n\n\nFigure 7: Genre vs Year"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BMC SPT Data",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Shakespeare Performance Troupe Data Archive\n\n\n\n\n\n\n\n\n\nimport {generateTabulatorTableFromCSV} from \"8bb63a6cde9addff\"\n\n\n\n\n\n\n\ngenerateTabulatorTableFromCSV(\n  \"#my-table\",                          // CSS selector for the table container\n  \"https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv\",      // &lt;-- plug in your CSV URL or file path here\n\n  {\n    displayedColumns: [                 // columns to show (in order)\n      \"Year\",\n      \"Season\",\n      \"Show\",\n      \"Genre\",\n      \"Times_Performed\"\n    ],\n\n    numericColumns: [\"Year\", \"Times_Performed\"],       // columns to treat as numbers (enables range filters)\n\n    categoryColumns: [\"Season\", \"Genre\"],      // columns to treat as categories (enables dropdown filters)\n\n    sortColumns: [\"Year\"],          // default sort column(s)\n    sortOrders: [\"asc\"]                 // \"asc\" or \"desc\" for each sort column\n  }\n);"
+    "text": "Shakespeare Performance Troupe Data Archive\n\n\n\n\n\n\n\nThis site contains a dataset based on the currently known production history of Bryn Mawr College’s Shakespeare Performance Troupe. It was built using Quarto, R, and the Post45 Data Viewer.\n\n\nThe data contained in this site was sourced from SPT’s public Wordpress, and has been compiled here, along with other data that has been collected from other sources, including SPT’s Youtube channel and previous blog.\n\n\n\n\nMore About SPT SPT’s Youtube Data Collection"
   }
 ]
