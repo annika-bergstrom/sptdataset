@@ -12,4 +12,4 @@ Author data was available online and in publications of each play. Shows which h
 
 For now, these are the current primary feilds in the dataset, but more data may be added in the future. Areas that may be expanded upon include cast size, run time, director, and other data that may be available or become available in the future. 
 <br>
-<div class="button-group"><a type="button" class="btn btn-dark" href="https://bmcspt.wordpress.com">SPT Wordpress</a></div>
+<div class="button-container"><a type="button" class="btn btn-dark" href="https://bmcspt.wordpress.com">SPT Wordpress</a></div>
