@@ -18,6 +18,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
+  --shadow-color: 56deg 9% 62%;
+  --shadow-elevation-low:
+    0.3px 0.3px 0.5px hsl(var(--shadow-color) / 0.4),
+    1.2px 0.9px 1.7px -2.5px hsl(var(--shadow-color) / 0.4);
+  --shadow-elevation-medium:
+    0.3px 0.3px 0.5px hsl(var(--shadow-color) / 0.37),
+    1.6px 1.2px 2.3px -1.2px hsl(var(--shadow-color) / 0.37),
+    5.9px 4.7px 8.5px -2.5px hsl(var(--shadow-color) / 0.37);
+  --shadow-elevation-high:
+    0.3px 0.3px 0.5px hsl(var(--shadow-color) / 0.41),
+    2.5px 2px 3.6px -0.6px hsl(var(--shadow-color) / 0.41),
+    5.9px 4.7px 8.5px -1.2px hsl(var(--shadow-color) / 0.41),
+    12.9px 10.2px 18.5px -1.9px hsl(var(--shadow-color) / 0.41),
+    26px 20.5px 37.2px -2.5px hsl(var(--shadow-color) / 0.41);
+}
+:root {
   /* Brand / Theme Colors */
   --color-primary: #192863;
   --color-secondary: #6288A6;
