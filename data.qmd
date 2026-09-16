@@ -11,3 +11,5 @@ Genre data was determined based on the general consensus around the genre of eac
 Author data was available online and in publications of each play. Shows which had more than one author were classified as "Multiple Authors" and shows which had an unknown author were classified as "Unknown Author". Shows which were written, in large part or in full, by members of the troupe were classifed as "Self Written".
 
 For now, these are the current primary feilds in the dataset, but more data may be added in the future. Areas that may be expanded upon include cast size, run time, director, and other data that may be available or become available in the future. 
+<br>
+<a type="button" class="btn btn-dark" href="https://bmcspt.wordpress.com">SPT Wordpress</a>
