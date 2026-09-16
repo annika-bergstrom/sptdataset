@@ -18,7 +18,10 @@ website:
       - href: about.qmd
         text: About
       - href: data.qmd
-        text: Data
+        text: Data 
+    right:
+      - icon: github
+        href: https://github.com/annika-bergstrom/sptdataset
 
 format:
   html:
