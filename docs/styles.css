@@ -91,7 +91,7 @@ main.content,
     border:#6A2526 2px solid;
     margin-left:auto !important;
     margin-right:auto !important;
-    box-shadow: var( --shadow-elevation-medium)
+    box-shadow: var(--shadow-elevation-medium);
 }
 #quarto-document-content {
   width: 100%;
