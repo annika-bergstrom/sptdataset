@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "How We Collected the Data",
+    "section": "",
+    "text": "Shakespeare Performance Troupe Data Archive\n\n\n\n\n\nThe data in this dataset was collected primarily from SPT’s public Wordpress, linked at the bottom of this page. Year, Season, Show, and Times Performed data all came from this site.\nSPT’s Youtube channel was used to collect cast size data, and to verify the accuracy of the data collected from the Wordpress. SPT’s Youtube is not fully up to date, nor does it contain video of every performance, and so presents a less complete performance record. The inconsistancy of data on the Youtube channel is the reason that cast size data is not availabe for every performance in the dataset, and is not listed in the table on the homepage.\nGenre data was determined based on the general consensus around the genre of each play, and was not sourced from SPT’s Wordpress or Youtube. Shakespeare plays were classified as comedies, tragedies, histories, or tragedy-comedies, the term used in this dataset to describe his so called “problem plays”, which do not fit neatly into the other three main genres. This was done to allow for the categorization of other, non-shakespearean plays alongside plays like “The Winter’s Tale” as being similarly generically complex. The “Other” category was used for satires, musicals, collections of short plays, and other performances that do not fit cleanly into the other four main genres used.\nAuthor data was available online and in publications of each play. Shows which had more than one author were classified as “Multiple Authors” and shows which had an unknown author were classified as “Unknown Author”. Shows which were written, in large part or in full, by members of the troupe were classifed as “Self Written”.\nFor now, these are the current primary feilds in the dataset, but more data may be added in the future. Areas that may be expanded upon include cast size, run time, director, and other data that may be available or become available in the future. \n\nSPT Wordpress"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BMC SPT Data",
+    "section": "",
+    "text": "Shakespeare Performance Troupe Data Archive\n\n\n\n\n\n\n\n\n\nimport {generateTabulatorTableFromCSV} from \"8bb63a6cde9addff\"\n\n\n\n\n\n\n\ngenerateTabulatorTableFromCSV(\n  \"#my-table\",                          // CSS selector for the table container\n  \"https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv\",      // &lt;-- plug in your CSV URL or file path here\n\n  {\n    displayedColumns: [                 // columns to show (in order)\n      \"Year\",\n      \"Season\",\n      \"Show\",\n      \"Genre\",\n      \"Times_Performed\",\n      \"Run_Time\",\n    ],\n\n    numericColumns: [\"Year\", \"Times_Performed\", \"Run_Time\"],       // columns to treat as numbers (enables range filters)\n\n    categoryColumns: [\"Season\", \"Genre\"],      // columns to treat as categories (enables dropdown filters)\n\n    sortColumns: [\"Year\"],          // default sort column(s)\n    sortOrders: [\"asc\"]                 // \"asc\" or \"desc\" for each sort column\n  }\n);"
+  },
+  {
     "objectID": "datavis.html#year-of-show-vs-times-performed",
     "href": "datavis.html#year-of-show-vs-times-performed",
     "title": "Data Visualization",
@@ -60,7 +74,7 @@
     "href": "datavis.html#year-of-show-vs-average-run-time",
     "title": "Data Visualization",
     "section": "Year of show vs Average Run Time",
-    "text": "Year of show vs Average Run Time\n\n\nCode\nlibrary(ggplot2)\nlibrary (dplyr)\n\nproddata &lt;- read.csv(\"https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv\")\n\nnames(proddata)[names(proddata) == \"Times Performed\"] &lt;- \"Times_Performed\"\n\nyear_average &lt;- proddata %&gt;%\n  group_by(Year) %&gt;%\n  summarise(Average_Run_Time = median(Run_Time, na.rm = TRUE))\n\n# Barplot\nggplot(year_average, aes(x=Year, y=Average_Run_Time)) + \n  geom_point(stat = \"identity\") + geom_smooth(method = \"lm\", formula = y ~ poly(x, 1), color = \"red\", se = TRUE)\n\n\n\n\n\n\n\n\nFigure 9: Year of show vs Run Time"
+    "text": "Year of show vs Average Run Time\n\n\nCode\nlibrary(ggplot2)\nlibrary (dplyr)\n\nproddata &lt;- read.csv(\"https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv\")\n\nnames(proddata)[names(proddata) == \"Times Performed\"] &lt;- \"Times_Performed\"\n\nyear_average &lt;- proddata %&gt;%\n  group_by(Year) %&gt;%\n  summarise(Average_Run_Time = median(Run_Time, na.rm = TRUE))\n\n# Barplot\nggplot(year_average, aes(x=Year, y=Average_Run_Time)) + \n  geom_point(stat = \"identity\") + geom_smooth(method = \"lm\", formula = y ~ poly(x, 2), color = \"red\", se = TRUE)\n\n\n\n\n\n\n\n\nFigure 9: Year of show vs Run Time"
   },
   {
     "objectID": "datavis.html#year-of-show-vs-run-time",
@@ -68,13 +82,6 @@
     "title": "Data Visualization",
     "section": "Year of show vs Run Time",
     "text": "Year of show vs Run Time\n\n\nCode\nlibrary(ggplot2)\nlibrary (dplyr)\n\nproddata &lt;- read.csv(\"https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv\")\n\ncleaned_data &lt;- proddata %&gt;%\n  filter(\n    Run_Time&gt;= quantile(Run_Time, 0.25, na.rm = TRUE) - 1.5 * IQR(Run_Time, na.rm = TRUE) &\n    Run_Time&lt;= quantile(Run_Time, 0.75, na.rm = TRUE) + 1.5 * IQR(Run_Time, na.rm = TRUE)\n  )\n\n# Barplot\nggplot(cleaned_data, aes(x=Year, y=Run_Time)) + \n  geom_point(stat = \"identity\") + geom_smooth(method = \"lm\", formula = y ~ poly(x, 1), color = \"red\", se = TRUE)\n\n\n\n\n\n\n\n\nFigure 10: Year of show vs Run Time"
-  },
-  {
-    "objectID": "data.html",
-    "href": "data.html",
-    "title": "How We Collected the Data",
-    "section": "",
-    "text": "Shakespeare Performance Troupe Data Archive\n\n\n\n\n\nThe data in this dataset was collected primarily from SPT’s public Wordpress, linked at the bottom of this page. Year, Season, Show, and Times Performed data all came from this site.\nSPT’s Youtube channel was used to collect cast size data, and to verify the accuracy of the data collected from the Wordpress. SPT’s Youtube is not fully up to date, nor does it contain video of every performance, and so presents a less complete performance record. The inconsistancy of data on the Youtube channel is the reason that cast size data is not availabe for every performance in the dataset, and is not listed in the table on the homepage.\nGenre data was determined based on the general consensus around the genre of each play, and was not sourced from SPT’s Wordpress or Youtube. Shakespeare plays were classified as comedies, tragedies, histories, or tragedy-comedies, the term used in this dataset to describe his so called “problem plays”, which do not fit neatly into the other three main genres. This was done to allow for the categorization of other, non-shakespearean plays alongside plays like “The Winter’s Tale” as being similarly generically complex. The “Other” category was used for satires, musicals, collections of short plays, and other performances that do not fit cleanly into the other four main genres used.\nAuthor data was available online and in publications of each play. Shows which had more than one author were classified as “Multiple Authors” and shows which had an unknown author were classified as “Unknown Author”. Shows which were written, in large part or in full, by members of the troupe were classifed as “Self Written”.\nFor now, these are the current primary feilds in the dataset, but more data may be added in the future. Areas that may be expanded upon include cast size, run time, director, and other data that may be available or become available in the future. \n\nSPT Wordpress"
   },
   {
     "objectID": "about.html",
