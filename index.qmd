@@ -23,10 +23,11 @@ generateTabulatorTableFromCSV(
       "Season",
       "Show",
       "Genre",
-      "Times_Performed"
+      "Times_Performed",
+      "Run_Time",
     ],
 
-    numericColumns: ["Year", "Times_Performed"],       // columns to treat as numbers (enables range filters)
+    numericColumns: ["Year", "Times_Performed", "Run_Time"],       // columns to treat as numbers (enables range filters)
 
     categoryColumns: ["Season", "Genre"],      // columns to treat as categories (enables dropdown filters)
 

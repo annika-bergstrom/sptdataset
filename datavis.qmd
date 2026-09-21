@@ -137,7 +137,7 @@ ggplot(plot_data, aes(x= Year, y= n)) +
 # Library
 library(ggplot2)
 
-# Create dummy data
+# Create data
 proddata <- read.csv("https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv")
 
 # linear trend + confidence interval
@@ -168,3 +168,77 @@ ggplot(Year_genre_counts, aes(x=Year, y= n, color=Genre, group=Genre)) +
   geom_point(stat = "identity") + geom_labelsmooth(aes (label = Genre), fill = "white", method = "lm", formula = y ~ x)
 
 ```
+
+## Run Time vs Genre
+```{r}
+#| label: fig-runtimevsgenre
+#| fig-cap: "Run Time vs Genre"
+#| warning: false
+
+library(ggplot2)
+library (dplyr)
+library (ggiraph)
+library (geomtextpath)
+
+proddata <- read.csv("https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv")
+
+genre_counts <- proddata %>%
+  count(Genre)
+Year_genre_counts <- proddata %>%
+  count(Year, Genre)
+run_time <- proddata %>%
+  group_by(Genre) %>%
+  summarise(Average_Run_Time = mean(Run_Time, na.rm = TRUE))
+# Barplot
+ggplot(run_time, aes(x=Genre, y=Average_Run_Time))
+
+```
+
+## Year of show vs Average Run Time
+
+```{r}
+#| label: fig-yearvsaverageruntime
+#| fig-cap: "Year of show vs Run Time"
+#| warning: false
+
+library(ggplot2)
+library (dplyr)
+
+proddata <- read.csv("https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv")
+
+names(proddata)[names(proddata) == "Times Performed"] <- "Times_Performed"
+
+year_average <- proddata %>%
+  group_by(Year) %>%
+  summarise(Average_Run_Time = median(Run_Time, na.rm = TRUE))
+
+# Barplot
+ggplot(year_average, aes(x=Year, y=Average_Run_Time)) + 
+  geom_point(stat = "identity") + geom_smooth(method = "lm", formula = y ~ poly(x, 2), color = "red", se = TRUE)
+```
+
+## Year of show vs Run Time
+
+```{r}
+#| label: fig-yearvsruntime
+#| fig-cap: "Year of show vs Run Time"
+#| warning: false
+
+library(ggplot2)
+library (dplyr)
+
+proddata <- read.csv("https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv")
+
+cleaned_data <- proddata %>%
+  filter(
+    Run_Time>= quantile(Run_Time, 0.25, na.rm = TRUE) - 1.5 * IQR(Run_Time, na.rm = TRUE) &
+    Run_Time<= quantile(Run_Time, 0.75, na.rm = TRUE) + 1.5 * IQR(Run_Time, na.rm = TRUE)
+  )
+
+# Barplot
+ggplot(cleaned_data, aes(x=Year, y=Run_Time)) + 
+  geom_point(stat = "identity") + geom_smooth(method = "lm", formula = y ~ poly(x, 1), color = "red", se = TRUE)
+```
+
+
+
