@@ -7,11 +7,6 @@ title: "BMC SPT Data"
 
 ```{ojs}
 //| echo: false
-html`<div id='button-container'>
-  <button id="download-csv"><i class="fas fa-download"></i></i> Download CSV</button>
-  <button id="download-json"><i class="fas fa-download"></i></i> Download JSON</button>
-  <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button>
-</div>`
 import {generateTabulatorTableFromCSV} from "8bb63a6cde9addff"
 ```
 
