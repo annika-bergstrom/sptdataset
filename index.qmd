@@ -37,8 +37,4 @@ generateTabulatorTableFromCSV(
 );
 ```
 :::{#my-table style="width: 900px"} 
-<div id="button-container2">
-  <button id="download-raw"><i class="fas fa-download"></i> Download Full Data</button>
-  <button id="copy-url"><i class="fas fa-copy"></i> Copy Full Data URL</button>
-</div>
 :::
