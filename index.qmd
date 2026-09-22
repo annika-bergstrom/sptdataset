@@ -36,10 +36,16 @@ generateTabulatorTableFromCSV(
   }
 );
 ```
+
 :::{#my-table style="width: 900px"} 
-html`<div id='button-container'>
-  <button id="download-csv"><i class="fas fa-download"></i></i> Download CSV</button>
-  <button id="download-json"><i class="fas fa-download"></i></i> Download JSON</button>
-  <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button>
-</div>`
 :::
+
+```{ojs}
+//| echo: false
+html`<div id='button-container2'>
+  <button id="download-raw"><i class="fas fa-download"></i></i> Download Full Data</button>
+  <button id="copy-url"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+</div>`
+```
+
+
