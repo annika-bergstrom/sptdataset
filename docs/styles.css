@@ -1,0 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --shadow-color: 56deg 9% 62%;
+  --shadow-elevation-low:
+    0.3px 0.3px 0.5px hsl(var(--shadow-color) / 0.4),
+    1.2px 0.9px 1.7px -2.5px hsl(var(--shadow-color) / 0.4);
+  --shadow-elevation-medium:
+    0.3px 0.3px 0.5px hsl(var(--shadow-color) / 0.37),
+    1.6px 1.2px 2.3px -1.2px hsl(var(--shadow-color) / 0.37),
+    5.9px 4.7px 8.5px -2.5px hsl(var(--shadow-color) / 0.37);
+  --shadow-elevation-high:
+    0.3px 0.3px 0.5px hsl(var(--shadow-color) / 0.41),
+    2.5px 2px 3.6px -0.6px hsl(var(--shadow-color) / 0.41),
+    5.9px 4.7px 8.5px -1.2px hsl(var(--shadow-color) / 0.41),
+    12.9px 10.2px 18.5px -1.9px hsl(var(--shadow-color) / 0.41),
+    26px 20.5px 37.2px -2.5px hsl(var(--shadow-color) / 0.41);
+}
+
+:root {
+  /* Brand / Theme Colors */
+  --color-primary: #192863;
+  --color-secondary: #6288A6;
+  --color-accent: #6A2526;
+
+  /* Neutral Colors */
+  --color-bg: #E7E6DA;
+  --color-bg-muted: #D1C9C7;
+  --color-text: #543B41;
+}
+
+/* css styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #E7E6DA;
+  font-family: 'Gentium Plus', serif;
+}
+
+main.content,
+#quarto-content,#quarto-document-content{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.heading {
+    display: flex;
+    width: 100vw;
+    
+    margin: 0px;
+    margin-bottom: 5rem;
+    padding: 1rem;
+    border-width: 0px;
+    outline-width: 0px;
+    margin-left: calc(50% - 50vw);
+    
+    background-color: #6288A6;
+    border-bottom:#6A2526 3px solid;
+    box-shadow: var(--shadow-elevation-medium);
+
+    text-align:left;
+    padding-left:5rem;
+    font-family: 'Almendra', serif;
+    font-weight: 400;
+    font-style: normal; 
+    text-color: #543B41;  
+}
+.title {
+    font-family: 'Zen Antique Soft', serif;
+    text-align:center;
+    color: #543B41;
+}
+#my-table{
+    border:#6A2526 2px solid;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    box-shadow: var(--shadow-elevation-medium);
+}
+#quarto-document-content {
+  width: 100%;
+  margin-left:0;
+  margin-right: 0;
+}
+
+.btn.btn-primary{
+    justify-content:center !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    display:flex;
+    max-width: 20rem;
+}
+
+.about-section {
+    width: 800px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#quarto-header {
+    border-bottom: #451717 5px solid;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Space between buttons */
+    margin-top: 2rem; /* Space above the button container */
+}
+
+#download-raw {
+  justify-content:center;
+  margin-top: 2rem;
+  max-width: 15rem;
+}
+
+#copy-url {
+  justify-content:center;
+  margin-top: 2rem;
+  max-width: 15rem;
+}
+
+#button-container2{
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Space between buttons */
+}
