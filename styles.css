@@ -112,3 +112,21 @@ main.content,
     gap: 2rem; /* Space between buttons */
     margin-top: 2rem; /* Space above the button container */
 }
+
+#download-raw {
+  justify-content:center;
+  margin-top: 2rem;
+  max-width: 15rem;
+}
+
+#copy-url {
+  justify-content:center;
+  margin-top: 2rem;
+  max-width: 15rem;
+}
+
+#button-container2{
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Space between buttons */
+}
