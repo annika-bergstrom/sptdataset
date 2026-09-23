@@ -199,39 +199,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" data-startfrom="12" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 11;"><span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>generateTabulatorTableFromCSV</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div id="ojs-cell-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
 <div class="cell hidden">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="18" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 17;"><span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">generateTabulatorTableFromCSV</span>(</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#my-table"</span><span class="op">,</span>                          <span class="co">// CSS selector for the table container</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv"</span><span class="op">,</span>      <span class="co">// &lt;-- plug in your CSV URL or file path here</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="dt">displayedColumns</span><span class="op">:</span> [                 <span class="co">// columns to show (in order)</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Year"</span><span class="op">,</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Season"</span><span class="op">,</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Show"</span><span class="op">,</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Genre"</span><span class="op">,</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Times_Performed"</span><span class="op">,</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Run_Time"</span><span class="op">,</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="dt">numericColumns</span><span class="op">:</span> [<span class="st">"Year"</span><span class="op">,</span> <span class="st">"Times_Performed"</span><span class="op">,</span> <span class="st">"Run_Time"</span>]<span class="op">,</span>       <span class="co">// columns to treat as numbers (enables range filters)</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="dt">categoryColumns</span><span class="op">:</span> [<span class="st">"Season"</span><span class="op">,</span> <span class="st">"Genre"</span>]<span class="op">,</span>      <span class="co">// columns to treat as categories (enables dropdown filters)</span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortColumns</span><span class="op">:</span> [<span class="st">"Year"</span>]<span class="op">,</span>          <span class="co">// default sort column(s)</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortOrders</span><span class="op">:</span> [<span class="st">"asc"</span>]                 <span class="co">// "asc" or "desc" for each sort column</span></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="14" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 13;"><span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">generateTabulatorTableFromCSV</span>(</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#my-table"</span><span class="op">,</span>                          <span class="co">// CSS selector for the table container</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://raw.githubusercontent.com/annika-bergstrom/csv-data-/refs/heads/main/SPT%20Production%20History%20-%20Sheet1.csv"</span><span class="op">,</span>      <span class="co">// &lt;-- plug in your CSV URL or file path here</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">displayedColumns</span><span class="op">:</span> [                 <span class="co">// columns to show (in order)</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Year"</span><span class="op">,</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Season"</span><span class="op">,</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Show"</span><span class="op">,</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Genre"</span><span class="op">,</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Times_Performed"</span><span class="op">,</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Run_Time"</span><span class="op">,</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="dt">numericColumns</span><span class="op">:</span> [<span class="st">"Year"</span><span class="op">,</span> <span class="st">"Times_Performed"</span><span class="op">,</span> <span class="st">"Run_Time"</span>]<span class="op">,</span>       <span class="co">// columns to treat as numbers (enables range filters)</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="dt">categoryColumns</span><span class="op">:</span> [<span class="st">"Season"</span><span class="op">,</span> <span class="st">"Genre"</span>]<span class="op">,</span>      <span class="co">// columns to treat as categories (enables dropdown filters)</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortColumns</span><span class="op">:</span> [<span class="st">"Year"</span>]<span class="op">,</span>          <span class="co">// default sort column(s)</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortOrders</span><span class="op">:</span> [<span class="st">"asc"</span>]                 <span class="co">// "asc" or "desc" for each sort column</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display hidden">
-<div id="ojs-cell-3" data-nodetype="expression">
+<div id="ojs-cell-2" data-nodetype="expression">
 
 </div>
 </div>
@@ -240,12 +232,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="47" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 46;"><span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div id='button-container2'&gt;</span></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;button id="download-raw"&gt;&lt;i class="fas fa-download"&gt;&lt;/i&gt;&lt;/i&gt; Download Full Data&lt;/button&gt;</span></span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;button id="copy-url"&gt;&lt;i class="fas fa-copy"&gt;&lt;/i&gt; Copy Full Data URL&lt;/button&gt;</span></span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="17" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 16;"><span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div id='button-container2'&gt;</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;button id="download-raw"&gt;&lt;i class="fas fa-download"&gt;&lt;/i&gt;&lt;/i&gt; Download Full Data&lt;/button&gt;</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;button id="copy-url"&gt;&lt;i class="fas fa-copy"&gt;&lt;/i&gt; Copy Full Data URL&lt;/button&gt;</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div id="ojs-cell-4" data-nodetype="expression">
+<div id="ojs-cell-3" data-nodetype="expression">
 
 </div>
 </div>
@@ -255,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7Z2VuZXJhdGVUYWJ1bGF0b3JUYWJsZUZyb21DU1Z9IGZyb20gXCI4YmI2M2E2Y2RlOWFkZGZmXCJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImdlbmVyYXRlVGFidWxhdG9yVGFibGVGcm9tQ1NWXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJnZW5lcmF0ZVRhYnVsYXRvclRhYmxlRnJvbUNTVihcbiAgXCIjbXktdGFibGVcIiwgICAgICAgICAgICAgICAgICAgICAgICAgIC8vIENTUyBzZWxlY3RvciBmb3IgdGhlIHRhYmxlIGNvbnRhaW5lclxuICBcImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9hbm5pa2EtYmVyZ3N0cm9tL2Nzdi1kYXRhLS9yZWZzL2hlYWRzL21haW4vU1BUJTIwUHJvZHVjdGlvbiUyMEhpc3RvcnklMjAtJTIwU2hlZXQxLmNzdlwiLCAgICAgIC8vIDwtLSBwbHVnIGluIHlvdXIgQ1NWIFVSTCBvciBmaWxlIHBhdGggaGVyZVxuXG4gIHtcbiAgICBkaXNwbGF5ZWRDb2x1bW5zOiBbICAgICAgICAgICAgICAgICAvLyBjb2x1bW5zIHRvIHNob3cgKGluIG9yZGVyKVxuICAgICAgXCJZZWFyXCIsXG4gICAgICBcIlNlYXNvblwiLFxuICAgICAgXCJTaG93XCIsXG4gICAgICBcIkdlbnJlXCIsXG4gICAgICBcIlRpbWVzX1BlcmZvcm1lZFwiLFxuICAgICAgXCJSdW5fVGltZVwiLFxuICAgIF0sXG5cbiAgICBudW1lcmljQ29sdW1uczogW1wiWWVhclwiLCBcIlRpbWVzX1BlcmZvcm1lZFwiLCBcIlJ1bl9UaW1lXCJdLCAgICAgICAvLyBjb2x1bW5zIHRvIHRyZWF0IGFzIG51bWJlcnMgKGVuYWJsZXMgcmFuZ2UgZmlsdGVycylcblxuICAgIGNhdGVnb3J5Q29sdW1uczogW1wiU2Vhc29uXCIsIFwiR2VucmVcIl0sICAgICAgLy8gY29sdW1ucyB0byB0cmVhdCBhcyBjYXRlZ29yaWVzIChlbmFibGVzIGRyb3Bkb3duIGZpbHRlcnMpXG5cbiAgICBzb3J0Q29sdW1uczogW1wiWWVhclwiXSwgICAgICAgICAgLy8gZGVmYXVsdCBzb3J0IGNvbHVtbihzKVxuICAgIHNvcnRPcmRlcnM6IFtcImFzY1wiXSAgICAgICAgICAgICAgICAgLy8gXCJhc2NcIiBvciBcImRlc2NcIiBmb3IgZWFjaCBzb3J0IGNvbHVtblxuICB9XG4pO1xuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC00IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiaHRtbGA8ZGl2IGlkPSdidXR0b24tY29udGFpbmVyMic+XG4gIDxidXR0b24gaWQ9XCJkb3dubG9hZC1yYXdcIj48aSBjbGFzcz1cImZhcyBmYS1kb3dubG9hZFwiPjwvaT48L2k+IERvd25sb2FkIEZ1bGwgRGF0YTwvYnV0dG9uPlxuICA8YnV0dG9uIGlkPVwiY29weS11cmxcIj48aSBjbGFzcz1cImZhcyBmYS1jb3B5XCI+PC9pPiBDb3B5IEZ1bGwgRGF0YSBVUkw8L2J1dHRvbj5cbjwvZGl2PmBcbiJ9XX0=
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7Z2VuZXJhdGVUYWJ1bGF0b3JUYWJsZUZyb21DU1Z9IGZyb20gXCI4YmI2M2E2Y2RlOWFkZGZmXCJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImdlbmVyYXRlVGFidWxhdG9yVGFibGVGcm9tQ1NWKFxuICBcIiNteS10YWJsZVwiLCAgICAgICAgICAgICAgICAgICAgICAgICAgLy8gQ1NTIHNlbGVjdG9yIGZvciB0aGUgdGFibGUgY29udGFpbmVyXG4gIFwiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FubmlrYS1iZXJnc3Ryb20vY3N2LWRhdGEtL3JlZnMvaGVhZHMvbWFpbi9TUFQlMjBQcm9kdWN0aW9uJTIwSGlzdG9yeSUyMC0lMjBTaGVldDEuY3N2XCIsICAgICAgLy8gPC0tIHBsdWcgaW4geW91ciBDU1YgVVJMIG9yIGZpbGUgcGF0aCBoZXJlXG5cbiAge1xuICAgIGRpc3BsYXllZENvbHVtbnM6IFsgICAgICAgICAgICAgICAgIC8vIGNvbHVtbnMgdG8gc2hvdyAoaW4gb3JkZXIpXG4gICAgICBcIlllYXJcIixcbiAgICAgIFwiU2Vhc29uXCIsXG4gICAgICBcIlNob3dcIixcbiAgICAgIFwiR2VucmVcIixcbiAgICAgIFwiVGltZXNfUGVyZm9ybWVkXCIsXG4gICAgICBcIlJ1bl9UaW1lXCIsXG4gICAgXSxcblxuICAgIG51bWVyaWNDb2x1bW5zOiBbXCJZZWFyXCIsIFwiVGltZXNfUGVyZm9ybWVkXCIsIFwiUnVuX1RpbWVcIl0sICAgICAgIC8vIGNvbHVtbnMgdG8gdHJlYXQgYXMgbnVtYmVycyAoZW5hYmxlcyByYW5nZSBmaWx0ZXJzKVxuXG4gICAgY2F0ZWdvcnlDb2x1bW5zOiBbXCJTZWFzb25cIiwgXCJHZW5yZVwiXSwgICAgICAvLyBjb2x1bW5zIHRvIHRyZWF0IGFzIGNhdGVnb3JpZXMgKGVuYWJsZXMgZHJvcGRvd24gZmlsdGVycylcblxuICAgIHNvcnRDb2x1bW5zOiBbXCJZZWFyXCJdLCAgICAgICAgICAvLyBkZWZhdWx0IHNvcnQgY29sdW1uKHMpXG4gICAgc29ydE9yZGVyczogW1wiYXNjXCJdICAgICAgICAgICAgICAgICAvLyBcImFzY1wiIG9yIFwiZGVzY1wiIGZvciBlYWNoIHNvcnQgY29sdW1uXG4gIH1cbik7XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJodG1sYDxkaXYgaWQ9J2J1dHRvbi1jb250YWluZXIyJz5cbiAgPGJ1dHRvbiBpZD1cImRvd25sb2FkLXJhd1wiPjxpIGNsYXNzPVwiZmFzIGZhLWRvd25sb2FkXCI+PC9pPjwvaT4gRG93bmxvYWQgRnVsbCBEYXRhPC9idXR0b24+XG4gIDxidXR0b24gaWQ9XCJjb3B5LXVybFwiPjxpIGNsYXNzPVwiZmFzIGZhLWNvcHlcIj48L2k+IENvcHkgRnVsbCBEYXRhIFVSTDwvYnV0dG9uPlxuPC9kaXY+YFxuIn1dfQ==
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }

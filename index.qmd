@@ -9,9 +9,6 @@ title: "BMC SPT Data"
 //| echo: false
 import {generateTabulatorTableFromCSV} from "8bb63a6cde9addff"
 ```
-```{ojs}
-generateTabulatorTableFromCSV
-```
 
 ```{ojs}
 //| echo: false
